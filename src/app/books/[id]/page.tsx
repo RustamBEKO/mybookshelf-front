@@ -98,9 +98,9 @@ export default function BookPage() {
         // Fall back to empty array if the endpoint doesn't support it
         if (
           bookWithReviews &&
-          Array.isArray((bookWithReviews as never).reviews)
+          Array.isArray((bookWithReviews as any).reviews)
         ) {
-          setReviews((bookWithReviews as never).reviews);
+          setReviews((bookWithReviews as any).reviews);
         }
       })
       .catch(() => {
