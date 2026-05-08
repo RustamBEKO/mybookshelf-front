@@ -52,11 +52,11 @@ export default function LoginPage() {
       alignItems: 'center', justifyContent: 'center', padding: 24,
     }}>
       <div className="fade-up card" style={{ width: '100%', maxWidth: 400 }}>
-        <h1 style={{ fontFamily: 'Bebas Neue, cursive', fontSize: 32, letterSpacing: 2, marginBottom: 4 }}>
+        <h1 style={{ fontFamily: 'trebuchet ms', fontSize: 32, letterSpacing: 2, marginBottom: 4 }}>
           Sign <span style={{ color: 'var(--accent)' }}>In</span>
         </h1>
         <p style={{ color: 'var(--text-muted)', marginBottom: 28, fontSize: 14 }}>
-          Welcome back to CineVault
+          Welcome back to MyBookShelf!
         </p>
 
         <form onSubmit={handle} style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>

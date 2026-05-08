@@ -16,14 +16,15 @@ export interface UserReview {
   id: string;
   rating: number;
   comment: string | null;
-  movie: { id: string; title: string };
+  book: { id: string; title: string };
   createdAt: string;
 }
 
-export interface Movie {
+export interface Book {
   id: string;
   title: string;
   description: string | null;
+  author: string | null;
   year: number;
   genre: Genre;
   posterUrl: string | null;
@@ -36,18 +37,38 @@ export interface Review {
   id: string;
   rating: number;
   comment: string | null;
-  movieId: string;
+  bookId: string;
   userId: string;
   createdAt: string;
   user: { id: string; name: string };
 }
 
-export interface MoviesResponse {
-  data: Movie[];
+export interface BooksResponse {
+  data: Book[];
   meta: {
     total: number;
     page: number;
     limit: number;
+    totalPages: number;
+  };
+}
+
+export interface BooksQuery {
+  page?: number;
+  limit?: number;
+  genre?: Genre;
+  year?: number;
+  title?: string;
+  author?: string;
+  sortBy?: 'createdAt' | 'year' | 'title' | 'author';
+  order?: 'asc' | 'desc';
+}
+
+export interface AdminStats {
+  totalBooks: number;
+  totalUsers: number;
+  totalReviews: number;
+}
     totalPages: number;
     hasNextPage: boolean;
     hasPrevPage: boolean;
@@ -66,7 +87,7 @@ export interface MoviesQuery {
 
 export interface AdminStats {
   overview: {
-    totalMovies: number;
+    totalBooks: number;
     totalUsers: number;
     totalReviews: number;
     avgRating: number;
@@ -74,13 +95,13 @@ export interface AdminStats {
     reviewsLastMonth: number;
     reviewsGrowth: number;
     newUsersThisMonth: number;
-    newMoviesThisMonth: number;
+    newBooksThisMonth: number;
   };
-  moviesByGenre: { genre: Genre; count: number }[];
-  recentMovies: Movie[];
+  booksByGenre: { genre: Genre; count: number }[];
+  recentBooks: Book[];
   recentUsers: User[];
-  topRatedMovies: {
-    id: string; title: string; genre: Genre; year: number;
+  topRatedBooks: {
+    id: string; title: string; author: string | null; genre: Genre; year: number;
     posterUrl: string | null; reviewCount: number; avgRating: number;
   }[];
 }

@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import type { Movie } from "@/types";
+import type { Book } from "@/types";
 
 const GENRE_COLORS: Record<string, string> = {
   ACTION: "badge-action",
@@ -72,7 +72,7 @@ function Placeholder({ genre, title }: { genre: string; title: string }) {
         }}
       />
       <span style={{ fontSize: 36, lineHeight: 1 }}>
-        {GENRE_ICONS[genre] || "🎬"}
+        {GENRE_ICONS[genre] || "📚"}
       </span>
       <span
         style={{
@@ -95,12 +95,12 @@ function Placeholder({ genre, title }: { genre: string; title: string }) {
 }
 
 interface Props {
-  movie: Movie;
+  book: Book;
   onDelete?: (id: string) => void;
   isAdmin?: boolean;
 }
 
-export function MovieCard({ movie, onDelete, isAdmin }: Props) {
+export function BookCard({ book, onDelete, isAdmin }: Props) {
   return (
     <div
       style={{
@@ -126,7 +126,7 @@ export function MovieCard({ movie, onDelete, isAdmin }: Props) {
       }}
     >
       <Link
-        href={`/books/${movie.id}`}
+        href={`/books/${book.id}`}
         style={{ textDecoration: "none", display: "block" }}
       >
         {/* Poster area */}
@@ -137,10 +137,10 @@ export function MovieCard({ movie, onDelete, isAdmin }: Props) {
             background: "var(--bg-elevated)",
           }}
         >
-          {movie.posterUrl ? (
+          {book.posterUrl ? (
             <img
-              src={movie.posterUrl}
-              alt={movie.title}
+              src={book.posterUrl}
+              alt={book.title}
               style={{
                 position: "absolute",
                 inset: 0,
@@ -161,12 +161,12 @@ export function MovieCard({ movie, onDelete, isAdmin }: Props) {
           {/* Placeholder — always rendered, hidden if poster loaded */}
           <div
             style={{
-              display: movie.posterUrl ? "none" : "flex",
+              display: book.posterUrl ? "none" : "flex",
               position: "absolute",
               inset: 0,
             }}
           >
-            <Placeholder genre={movie.genre} title={movie.title} />
+            <Placeholder genre={book.genre} title={book.title} />
           </div>
 
           {/* Bottom gradient overlay */}
@@ -185,10 +185,10 @@ export function MovieCard({ movie, onDelete, isAdmin }: Props) {
             style={{ position: "absolute", bottom: 10, left: 10, right: 10 }}
           >
             <span
-              className={`badge ${GENRE_COLORS[movie.genre] || "badge-action"}`}
+              className={`badge ${GENRE_COLORS[book.genre] || "badge-action"}`}
               style={{ fontSize: 11 }}
             >
-              {GENRE_ICONS[movie.genre]} {movie.genre.replace("_", " ")}
+              {GENRE_ICONS[book.genre]} {book.genre.replace("_", " ")}
             </span>
           </div>
         </div>
@@ -209,8 +209,23 @@ export function MovieCard({ movie, onDelete, isAdmin }: Props) {
               WebkitBoxOrient: "vertical",
             }}
           >
-            {movie.title}
+            {book.title}
           </h3>
+          {book.author && (
+            <p
+              style={{
+                color: "var(--text-muted)",
+                fontSize: 13,
+                marginBottom: 4,
+                overflow: "hidden",
+                display: "-webkit-box",
+                WebkitLineClamp: 1,
+                WebkitBoxOrient: "vertical",
+              }}
+            >
+              by {book.author}
+            </p>
+          )}
           <div
             style={{
               display: "flex",
@@ -219,11 +234,11 @@ export function MovieCard({ movie, onDelete, isAdmin }: Props) {
             }}
           >
             <span style={{ color: "var(--text-muted)", fontSize: 13 }}>
-              {movie.year}
+              {book.year}
             </span>
-            {(movie._count?.reviews ?? 0) > 0 && (
+            {(book._count?.reviews ?? 0) > 0 && (
               <span style={{ color: "var(--text-dim)", fontSize: 12 }}>
-                ⭐ {movie._count!.reviews}
+                ⭐ {book._count!.reviews}
               </span>
             )}
           </div>
@@ -236,7 +251,7 @@ export function MovieCard({ movie, onDelete, isAdmin }: Props) {
           onClick={(e) => {
             e.preventDefault();
             e.stopPropagation();
-            onDelete(movie.id);
+            onDelete(book.id);
           }}
           style={{
             position: "absolute",

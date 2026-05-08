@@ -29,10 +29,12 @@ export function Navbar() {
       display: 'flex', alignItems: 'center', justifyContent: 'space-between',
     }}>
       <Link href="/" style={{ textDecoration: 'none' }}>
-        <span style={{
-          fontFamily: 'Bebas Neue, cursive', fontSize: 24, letterSpacing: 2,
+        {/* <span style={{
+          fontFamily: 'Comic Sans MS, cursive', fontSize: 24, letterSpacing: 2,
           color: 'var(--accent)', lineHeight: 1,
-        }}>CINEVAULT</span>
+        }}>MyBookShelf</span> */}
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczOcS02-Hcia7axxGmLjdpCGPJYxAZjN0Lwx5MBbDcUQ1nwTZopBP3R0mEbU49uNDt41R2t229r7l0BZonls39AtfarhSqSSxRsPTMvTYnzXTaFpuJuwsFrhT4mzVPmy9lAV9GdvGw5CXS4YIJZZcPvo=w1025-h257-s-no-gm?authuser=0" alt="Logo" style={{ width: 180, height: 45 }}/>
+        
       </Link>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
