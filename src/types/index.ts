@@ -68,11 +68,11 @@ export interface AdminStats {
   totalBooks: number;
   totalUsers: number;
   totalReviews: number;
-}
+
     totalPages: number;
     hasNextPage: boolean;
     hasPrevPage: boolean;
-  };
+  
 }
 
 export interface MoviesQuery {
