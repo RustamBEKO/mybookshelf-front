@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
@@ -8,7 +10,7 @@ import {
   apiCreateReview,
   apiDeleteReview,
 } from "@/lib/api";
-import { getAccessToken, getUserInfo, isAdmin } from "@/lib/auth";
+import { getAccessToken } from "@/lib/auth";
 import { useAuth } from "@/contexts/AuthContext";
 import type { Book, Review } from "@/types";
 
@@ -96,9 +98,9 @@ export default function BookPage() {
         // Fall back to empty array if the endpoint doesn't support it
         if (
           bookWithReviews &&
-          Array.isArray((bookWithReviews as any).reviews)
+          Array.isArray((bookWithReviews as never).reviews)
         ) {
-          setReviews((bookWithReviews as any).reviews);
+          setReviews((bookWithReviews as never).reviews);
         }
       })
       .catch(() => {
@@ -268,7 +270,7 @@ export default function BookPage() {
 
           <h1
             style={{
-              fontFamily: "Bebas Neue, cursive",
+              fontFamily: "Trebuchet MS, sans-serif",
               fontSize: "clamp(32px,5vw,56px)",
               letterSpacing: 2,
               marginBottom: 16,
@@ -319,7 +321,7 @@ export default function BookPage() {
             </div>
           )}
 
-          {movie.description && (
+          {book.description && (
             <p
               style={{
                 color: "var(--text-muted)",
@@ -328,16 +330,16 @@ export default function BookPage() {
                 marginBottom: 24,
               }}
             >
-              {movie.description}
+              {book.description}
             </p>
           )}
 
           {admin && (
             <Link
-              href={`/admin/movies/${movie.id}`}
+              href={`/admin/books/${book.id}`}
               className="btn btn-ghost btn-sm"
             >
-              ✏ Edit Movie
+              ✏ Edit Book
             </Link>
           )}
         </div>
@@ -348,7 +350,7 @@ export default function BookPage() {
         <div className="card fade-up" style={{ marginBottom: 32 }}>
           <h3
             style={{
-              fontFamily: "Bebas Neue, cursive",
+              fontFamily: "Trebuchet MS, sans-serif",
               fontSize: 22,
               letterSpacing: 1,
               marginBottom: 16,
