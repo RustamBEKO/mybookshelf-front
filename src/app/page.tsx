@@ -5,6 +5,8 @@ import { BookCard } from "@/components/BookCard";
 import { Pagination } from "@/components/Pagination";
 import type { Book, BooksQuery, Genre } from "@/types";
 
+
+
 const GENRES: Genre[] = ["ACTION", "COMEDY", "DRAMA", "HORROR", "SCI_FI"];
 const SORT_OPTIONS = [
   { value: "createdAt:desc", label: "Сначала новые" },

@@ -5,8 +5,12 @@
 @tailwind utilities;
 
 :root {
-  --bg: #0a0a0a;
-  --bg-card: #141414;
+  /* --bg: #0a0a0a; */
+  --bg: #35170C;
+  --bg-overlay: rgba(20, 12, 8, 0.85);
+
+  /* --bg-card: #141414; */
+  --bg-card: #1d0c06;
   --bg-elevated: #1f1f1f;
   --bg-hover: #2a2a2a;
   --accent: #904D30;
@@ -26,7 +30,9 @@
 }
 
 [data-theme="light"] {
-  --bg: #f5f5f5;
+  /* --bg: #f5f5f5; */
+  --bg: #D2B48C;
+  --bg-overlay: rgba(255, 255, 255, 0.65);
   --bg-card: #ffffff;
   --bg-elevated: #f0f0f0;
   --bg-hover: #e8e8e8;
@@ -47,12 +53,17 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image: linear-gradient(var(--bg-overlay), var(--bg-overlay)), url('https://lh3.googleusercontent.com/pw/AP1GczNlKRzxweUkMEtw1hQLySJEBMnJl60ORDpkF8MO1nmW9SHue2Pep2R7WC4K-xOG5B_5ByoVAtI2PO0sjEUPpqjC8n2a8__PHMMqd3XeD1dul_JK7YpnGsXVNDSlSrGPtW8ahE1axs4ceceWs5OXtpP6=w1556-h1556-s-no-gm?authuser=0');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
   color: var(--text);
   font-family: 'DM Sans', sans-serif;
   font-size: 15px;
   line-height: 1.6;
-  transition: background 0.2s, color 0.2s;
+  transition: background-color 0.2s, color 0.2s;
   min-height: 100vh;
 }
 
