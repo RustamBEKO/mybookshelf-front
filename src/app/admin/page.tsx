@@ -51,7 +51,7 @@ function StatCard({
         </p>
         <p
           style={{
-            fontFamily: "Bebas Neue, cursive",
+            fontFamily: "Trebuchet MS, sans-serif",
             fontSize: 28,
             letterSpacing: 1,
             color: color || "var(--text)",
@@ -147,7 +147,7 @@ export default function AdminDashboard() {
       <div style={{ marginBottom: 28 }}>
         <h1
           style={{
-            fontFamily: "Bebas Neue, cursive",
+            fontFamily: "Trebuchet MS, sans-serif",
             fontSize: 36,
             letterSpacing: 2,
           }}
@@ -214,7 +214,7 @@ export default function AdminDashboard() {
         <div className="card">
           <h3
             style={{
-              fontFamily: "Bebas Neue, cursive",
+              fontFamily: "Trebuchet MS, sans-serif",
               fontSize: 20,
               letterSpacing: 1,
               marginBottom: 20,
@@ -236,7 +236,7 @@ export default function AdminDashboard() {
         <div className="card">
           <h3
             style={{
-              fontFamily: "Bebas Neue, cursive",
+              fontFamily: "Trebuchet MS, sans-serif",
               fontSize: 20,
               letterSpacing: 1,
               marginBottom: 16,
@@ -266,7 +266,7 @@ export default function AdminDashboard() {
             >
               <span
                 style={{
-                  fontFamily: "Bebas Neue, cursive",
+                  fontFamily: "Trebuchet MS, sans-serif",
                   fontSize: 20,
                   color: "var(--text-dim)",
                   width: 20,
@@ -323,7 +323,7 @@ export default function AdminDashboard() {
           >
             <h3
               style={{
-                fontFamily: "Bebas Neue, cursive",
+                fontFamily: "Trebuchet MS, sans-serif",
                 fontSize: 20,
                 letterSpacing: 1,
               }}
@@ -390,7 +390,7 @@ export default function AdminDashboard() {
           >
             <h3
               style={{
-                fontFamily: "Bebas Neue, cursive",
+                fontFamily: "Trebuchet MS, sans-serif",
                 fontSize: 20,
                 letterSpacing: 1,
               }}

@@ -209,7 +209,7 @@ export default function AdminUsersPage() {
 
       {/* Header */}
       <div style={{ marginBottom: 28 }}>
-        <h1 style={{ fontFamily: 'Bebas Neue, cursive', fontSize: 36, letterSpacing: 2 }}>Users</h1>
+        <h1 style={{ fontFamily: 'Trebuchet MS, sans-serif', fontSize: 36, letterSpacing: 2 }}>Users</h1>
         <p style={{ color: 'var(--text-muted)', fontSize: 14 }}>
           {counts.total} total
           {superAdmin && <span style={{ color: 'var(--gold)', marginLeft: 8 }}>· You can manage roles</span>}
@@ -240,7 +240,7 @@ export default function AdminUsersPage() {
             <span style={{ fontSize: 22 }}>{s.icon}</span>
             <div>
               <p style={{ fontSize: 11, color: 'var(--text-dim)' }}>{s.label}</p>
-              <p style={{ fontFamily: 'Bebas Neue, cursive', fontSize: 22, color: s.color, lineHeight: 1 }}>{s.value}</p>
+              <p style={{ fontFamily: 'Trebuchet MS, sans-serif', fontSize: 22, color: s.color, lineHeight: 1 }}>{s.value}</p>
             </div>
           </div>
         ))}

@@ -9,7 +9,7 @@ export function getAccessToken(): string | null {
 }
 
 export function saveAccessToken(token: string): void {
-  Cookies.set(TOKEN_KEY, token, { expires: 1 / 8, sameSite: 'lax' });
+  Cookies.set(TOKEN_KEY, token, { expires: 3 / 24, sameSite: 'lax' });
   localStorage.setItem(TOKEN_KEY, token);
 }
 

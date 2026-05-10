@@ -134,7 +134,7 @@ export default function ProfilePage() {
             <div style={{ textAlign: "center" }}>
               <p
                 style={{
-                  fontFamily: "Bebas Neue, cursive",
+                  fontFamily: "Trebuchet MS, sans-serif",
                   fontSize: 28,
                   color: "var(--gold)",
                 }}
@@ -152,7 +152,7 @@ export default function ProfilePage() {
       {/* Reviews */}
       <h2
         style={{
-          fontFamily: "Bebas Neue, cursive",
+          fontFamily: "Trebuchet MS, sans-serif",
           fontSize: 26,
           letterSpacing: 1,
           marginBottom: 16,
@@ -175,7 +175,7 @@ export default function ProfilePage() {
           className="card"
           style={{ textAlign: "center", padding: "48px 24px" }}
         >
-          <div style={{ fontSize: 40, marginBottom: 12 }}>🎬</div>
+          <div style={{ fontSize: 40, marginBottom: 12 }}>📚</div>
           <p style={{ color: "var(--text-muted)", marginBottom: 16 }}>
             You haven't reviewed any books yet
           </p>
